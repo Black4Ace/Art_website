@@ -1,0 +1,519 @@
+/* General Styles */
+:root {
+    --primary-color: #626262; 
+    --background-color: rgb(214, 214, 214); 
+    --secondary-color: #9db383; /* Set green as the secondary color */
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--background-color); /* Use background color */
+    color: var(--primary-color);
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+
+/* Main Content */
+main {
+    flex: 1; /* Ensures it takes up all available space */
+    padding: 20px; /* Add some padding for spacing */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Ensure the content fits between header and footer */
+}
+
+header {
+    background-color: var(--secondary-color);
+    padding: 2% 3%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    height: 8%;
+    overflow: visible;
+
+}
+
+/* Centered logo container */
+.logo-link {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Logo image itself */
+.logo-img {
+    max-height: 100%;
+    width: auto;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+
+/* Navigation Menu */
+nav {
+    margin-left: 10px;
+}
+
+.nav-menu {
+    background-color: var(--primary-color); /* Use background color */
+    color: var(--secondary-color);
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown Menu */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: var(--primary-color); /* Use primary color */
+    min-width: 100px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.dropdown-content a {
+    color: var(--secondary-color);
+    padding: 8px 12px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: var(--background-color); /* Use background color */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Main Container */
+.main-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start; 
+    align-items: center;
+    height: 90%;
+}
+
+#gallery-page .main-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;   
+    align-items: center;      
+    height: 100%;             
+    width: 100%;              
+    margin: 0;                 
+}
+
+.gallery-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-start; /* Ensures content flows from left to right */
+    gap: 30px; /* <-- This controls the space between image and description */
+    padding: 20px;
+    background-color: var(--primary-color); /* Use primary color */
+    border-radius: 10px;
+    width: 80%;
+    height: 250px;
+    margin-bottom: 20px;
+    border: 2px solid transparent; /* No border by default, but space is reserved */
+    transition: border 0.3s ease; /* Smooth transition effect */
+}
+
+.gallery-container * {
+    color: var(--secondary-color); /* Change text color to secondary color */
+}
+.gallery-container:hover {
+    border: 5px solid var(--secondary-color); /* Use secondary color on hover */
+}
+
+/* Alternate the layout for every even item (zig-zag) */
+.gallery-container:nth-child(even) {
+    flex-direction: row-reverse;
+  }
+  
+  /* On small screens: stack image on top, description below */
+  @media (max-width: 768px) {
+    .gallery-container {
+      flex-direction: column;
+    }
+  
+    .gallery-container:nth-child(even) {
+      flex-direction: column; /* Remove zig-zag on mobile */
+    }
+  }
+
+/* Image Container */
+.image-container {
+    flex: 0 0 auto; /* Don't stretch */
+    padding: 10px;
+}
+
+.gallery-image {
+    width: 250px; /* Set a fixed width */
+    height: 250px; /* Set a fixed height */
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+/* Description Container */
+.description-container {
+    flex: 1; /* Take the remaining space */
+    padding: 10px;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+/* Slideshow Container */
+.slideshow-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+    width: 90%;
+}
+
+/* Slideshow Styles */
+.slideshow {
+    width: 30%;
+    aspect-ratio: 1;
+    margin: 0 10px;
+    overflow: hidden;
+    position: relative;
+}
+
+/* Slides */
+.slide {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    position: absolute;
+    animation-duration: 24s; /* 6 images * 4s = 24s for all 8 images (faster) */
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    opacity: 0;
+}
+
+
+/* Animation 1: Slide From Left */
+.slideshow1 .slide {
+    animation-name: slideFromLeft;
+}
+
+@keyframes slideFromLeft {
+    0% { transform: translateX(-100%); opacity: 0; }
+    10% { opacity: 1; transform: translateX(0); }
+    12.5% { opacity: 1; transform: translateX(0); }
+    20% { opacity: 0; transform: translateX(100%); }
+    100% { opacity: 0; transform: translateX(100%); }
+}
+
+/* Animation 2: Fade In and Out */
+.slideshow2 .slide {
+    animation-name: fadeInOut;
+}
+
+@keyframes fadeInOut {
+    0% { opacity: 0; }
+    10% { opacity: 1; }
+    20% { opacity: 1; }
+    30% { opacity: 0; }
+    100% { opacity: 0; }
+}
+
+/* Animation 3: Slide Right to Left */
+.slideshow3 .slide {
+    animation-name: slideRightToLeft;
+}
+
+@keyframes slideRightToLeft {
+    0% { transform: translateX(100%); opacity: 0; }
+    10% { opacity: 1; transform: translateX(0); }
+    12.5% { opacity: 1; transform: translateX(0); }
+    20% { opacity: 0; transform: translateX(-100%); }
+    100% { opacity: 0; transform: translateX(-100%); }
+}
+
+/* Slide Delay for each slide */
+.slideshow1 .slide:nth-child(1) { animation-delay: 0s; }
+.slideshow1 .slide:nth-child(2) { animation-delay: 3s; }
+.slideshow1 .slide:nth-child(3) { animation-delay: 6s; }
+.slideshow1 .slide:nth-child(4) { animation-delay: 9s; }
+.slideshow1 .slide:nth-child(5) { animation-delay: 12s; }
+.slideshow1 .slide:nth-child(6) { animation-delay: 15s; }
+.slideshow1 .slide:nth-child(7) { animation-delay: 18s; }
+.slideshow1 .slide:nth-child(8) { animation-delay: 21s; }
+
+.slideshow2 .slide:nth-child(1) { animation-delay: 0s; }
+.slideshow2 .slide:nth-child(2) { animation-delay: 3s; }
+.slideshow2 .slide:nth-child(3) { animation-delay: 6s; }
+.slideshow2 .slide:nth-child(4) { animation-delay: 9s; }
+.slideshow2 .slide:nth-child(5) { animation-delay: 12s; }
+.slideshow2 .slide:nth-child(6) { animation-delay: 15s; }
+.slideshow2 .slide:nth-child(7) { animation-delay: 18s; }
+.slideshow2 .slide:nth-child(8) { animation-delay: 21s; }
+
+.slideshow3 .slide:nth-child(1) { animation-delay: 0s; }
+.slideshow3 .slide:nth-child(2) { animation-delay: 3s; }
+.slideshow3 .slide:nth-child(3) { animation-delay: 6s; }
+.slideshow3 .slide:nth-child(4) { animation-delay: 9s; }
+.slideshow3 .slide:nth-child(5) { animation-delay: 12s; }
+.slideshow3 .slide:nth-child(6) { animation-delay: 15s; }
+.slideshow3 .slide:nth-child(7) { animation-delay: 18s; }
+.slideshow3 .slide:nth-child(8) { animation-delay: 21s; }
+
+footer {
+    background-color: var(--secondary-color); 
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    display: flex; /* Enables flexbox on the footer */
+    justify-content: center; /* Horizontally centers the icons */
+    align-items: center; /* Vertically centers the icons */
+    flex-direction: column; /* Stack the content vertically */
+    width: 100%;
+    padding: 10px;    
+}
+
+footer p {
+    margin: 0; /* Remove default margin from <p> elements */
+}
+
+footer .contact-icons {
+    display: flex; /* Use flex for the icons */
+    gap: 10px; /* Space between the icons */
+     
+}
+
+footer .contact-icons a {
+    display: inline-block;
+    margin-top:8px;
+
+}
+
+footer .copyright {
+    margin-top: 8px; /* Adds space between contact icons and copyright */
+    font-size: 10px;
+}
+
+@media (max-width: 768px) {
+    .slideshow-container {
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        margin-bottom: 20px;
+    }
+
+    .slideshow {
+        width: 90%;          /* Full width */
+        max-width: 300px;     /* Optional: prevent it from being too wide on larger small screens */
+        margin-bottom: 20px;  /* Space between stacked slideshows */
+    }
+
+    .gallery-container {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        text-align: center;
+    }
+
+    .gallery-image {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+    }
+
+    .description-container {
+        padding-top: 10px;
+    }
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999; /* Ensure modal is above everything */
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+/* Navigation arrows container *//* General Modal Styling */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 9999; /* Ensure modal is above everything */
+    padding-top: 60px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.9); /* Black background with transparency */
+}
+
+/* Modal Content Styling */
+.modal-content {
+    margin: auto;
+    display: block;
+    max-height: 80vh; /* Ensure content fits within viewport height */
+    max-width: 90vw; /* Ensure content fits within viewport width */
+    border-radius: 10px; /* Rounded corners */
+    z-index: 1; /* Lower than navigation arrows */
+}
+
+/* Close (×) Button Styling */
+.close {
+    position: absolute;
+    top: 20px;
+    right: 35px;
+    color: var(--secondary-color); /* Customizable color */
+    font-size: 40px; /* Large size for visibility */
+    cursor: pointer;
+    z-index: 10000; /* Ensure close button is clickable */
+}
+
+/* Navigation Arrows Container */
+.modal-nav {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    z-index: 2; /* Above the image */
+    padding: 0 20px; /* Add consistent padding */
+}
+
+/* Navigation Arrows Styling */
+.modal-nav span {
+    cursor: pointer;
+    color: var(--secondary-color); /* Customizable color */
+    font-size: 40px; /* Large size for visibility */
+    user-select: none; /* Prevent text selection */
+    background-color: rgba(0, 0, 0, 0.5); /* Background for visibility */
+    padding: 10px;
+    border-radius: 50%; /* Circular buttons for navigation */
+}
+
+/* Hover Effect for Navigation Arrows */
+.modal-nav span:hover {
+    color: #ccc; /* Change color on hover */
+    background-color: rgba(255, 255, 255, 0.3); /* Lighten background on hover */
+}
+
+/* Specific Image Display Styling for Modal */
+.modal img {
+    margin: auto;
+    display: block;
+    max-width: 100%; /* Ensure images fit within modal */
+    max-height: 80vh; /* Maintain aspect ratio */
+}
+
+/* Centering Modal Navigation and Content (Optional) */
+.modal-content-centered {
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+svg {
+    display: block; /* Optional: Center the SVG */
+    margin: auto;
+    transition: transform 0.4s ease, fill 0.4s ease; /* Smooth effect */
+}
+
+.background {
+    fill: var(--primary-color);
+}
+
+.primary {
+    fill: var(--primary-color);
+}
+
+.secondary {
+    fill: var(--secondary-color);
+}
+
+.gradient {
+    fill: url(#paint0_linear_87_7264);
+}
+
+/* Hide portfolio options by default */
+.portfolio-content {
+    display: none;
+    position: absolute;
+    top: 0; /* Aligns it with the top of Portfolio button */
+    left: 100%; /* Positions it to the right of Explore */
+    background-color: var(--primary-color);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    /* padding: 8px; */
+    z-index: 10;
+}
+
+/* Ensure Portfolio itself is styled correctly */
+.portfolio-dropdown {
+    position: relative;
+}
+
+/* Show portfolio content on hover */
+.portfolio-dropdown:hover .portfolio-content {
+    display: block;
+}
+
+.art-container {
+    display: flex; /* Use flexbox for a dynamic layout */
+    flex-wrap: wrap; /* Allow the items to wrap onto the next row */
+    gap: 15px; /* Space between containers */
+    padding: 15px; /* Padding around the container */
+    justify-content: center; /* Align items to the left */
+}
+
+.artwork-container {
+    display: flex; /* Use flexbox to center content */
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5); /* Add a subtle shadow */
+    border-radius: 8px; /* Rounded corners */
+    padding: 10px; /* Internal padding for better spacing */
+    max-width: 250px; /* Scale the containers to a maximum width */
+    max-height: 250px; /* Scale the containers to a maximum height */
+    overflow: hidden; /* Prevent content overflow */
+}
+
+.display-image {
+    max-width: 100%; /* Scale images down to fit the container's width */
+    max-height: 100%; /* Scale images down to fit the container's height */
+    height: auto; /* Maintain the aspect ratio */
+    width: auto; /* Maintain the aspect ratio */
+}
+  
+.artwork-container * {
+    color: var(--secondary-color); /* Change text color to secondary color */
+}
+.artwork-container:hover {
+    
+    box-shadow: 0 4px 6px rgba(249, 249, 249, 0.5); /* Add a subtle shadow */
+} 
