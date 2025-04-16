@@ -1,56 +1,56 @@
 
 const imageGroups = {
     group1: [
-        '/Paintings/Abstract.webp',
-        '/Paintings/Abstract cropped mockup.webp',
-        '/Paintings/Abstract mockup.webp'
+        'Paintings/Abstract.webp',
+        'Paintings/Abstract cropped mockup.webp',
+        'Paintings/Abstract mockup.webp'
     ],
     group2: [
-        '/Paintings/black and white water.webp',
-        '/Paintings/black and white water cropped mockup.webp',
-        '/Paintings/black and white water mock up.webp'
+        'Paintings/black and white water.webp',
+        'Paintings/black and white water cropped mockup.webp',
+        'Paintings/black and white water mock up.webp'
     ],
     group3: [
-        '/Paintings/blue boys.webp',
-        '/Paintings/blue boys cropped mockup.webp',
-        '/Paintings/blue boys mockup.webp'
+        'Paintings/blue boys.webp',
+        'Paintings/blue boys cropped mockup.webp',
+        'Paintings/blue boys mockup.webp'
     ],
     group4: [
-        '/Paintings/roses.webp',
-        '/Paintings/roses cropped mockup.webp',
-        '/Paintings/Roses mockup.webp'
+        'Paintings/roses.webp',
+        'Paintings/roses cropped mockup.webp',
+        'Paintings/Roses mockup.webp'
     ],
     group5: [
-        '/Paintings/shtetle.webp',
-        '/Paintings/Shtetle cropped mockup.webp',
-        '/Paintings/Shtetle mockup.webp'
+        'Paintings/shtetle.webp',
+        'Paintings/Shtetle cropped mockup.webp',
+        'Paintings/Shtetle mockup.webp'
     ],
     group6: [
-        '/Paintings/textured forest.webp',
-        '/Paintings/textured forest cropped mockup.webp',
-        '/Paintings/textured forest mockup.webp'
+        'Paintings/textured forest.webp',
+        'Paintings/textured forest cropped mockup.webp',
+        'Paintings/textured forest mockup.webp'
     ],
     group7: [
-        '/Paintings/waterfall.webp',
-        '/Paintings/waterfall cropped mockup.webp',
-        '/Paintings/waterfall mockup.webp'
+        'Paintings/waterfall.webp',
+        'Paintings/waterfall cropped mockup.webp',
+        'Paintings/waterfall mockup.webp'
     ],
     group8: [
-        '/Paintings/Akeida 1.webp',
-        '/Paintings/Akeida 2.webp',
-        '/Paintings/Akeida cropped Mockup.webp',
-        '/Paintings/Akeida Mockup.webp'
+        'Paintings/Akeida 1.webp',
+        'Paintings/Akeida 2.webp',
+        'Paintings/Akeida cropped Mockup.webp',
+        'Paintings/Akeida Mockup.webp'
     ],
     group9: [
-        '/Digital/Ballgown.webp',
-        '/Digital/Face_Paint.webp',
-        '/Digital/Fox.webp',
-        '/Digital/Jade.webp',
-        '/Digital/Light.webp',
-        '/Digital/Raven.webp',
-        '/Digital/Rose.webp',
-        '/Digital/Sunburst.webp',
-        '/Digital/Yerushalayim.webp',
+        'Digital/Ballgown.webp',
+        'Digital/Face_Paint.webp',
+        'Digital/Fox.webp',
+        'Digital/Jade.webp',
+        'Digital/Light.webp',
+        'Digital/Raven.webp',
+        'Digital/Rose.webp',
+        'Digital/Sunburst.webp',
+        'Digital/Yerushalayim.webp',
     ]
 };
 
