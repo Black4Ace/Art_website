@@ -85,7 +85,7 @@ nav {
 .nav-right {
     display: flex;
     align-items: center;
-    padding: 4%;
+    padding: 10%;
 }
 
 /* Dropdown Menu */
