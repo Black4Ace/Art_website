@@ -101,7 +101,7 @@ const imageGroups = {
 
     // Detect page type and apply modal behavior
     const bodyID = document.body.id;
-    const domBasedPages = ["digital-page", "marker-page", "ink-page", "pencil-page"];
+    const domBasedPages = ["digital-page", "marker-page", "ink-page", "pencil-page", "water colour-page"];
 
     if (bodyID === "gallery-page" || domBasedPages.includes(bodyID)) {
         const selector = bodyID === "gallery-page" ? '.gallery-container' : '.artwork-container';
