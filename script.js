@@ -164,3 +164,15 @@ document.querySelectorAll('.more-link a').forEach(link => {
 });
 
 
+window.addEventListener('DOMContentLoaded', () => {
+  const popup = document.getElementById('popup');
+
+  // Show the popup
+  popup.style.display = 'flex';
+
+  // Navigate on click
+  popup.addEventListener('click', () => {
+    window.location.href = "https://rachelklompasart.github.io/art/gallery.html";
+  });
+
+});

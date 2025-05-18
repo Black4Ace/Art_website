@@ -534,3 +534,28 @@ svg {
     
     box-shadow: 0 4px 6px rgba(249, 249, 249, 0.5); /* Add a subtle shadow */
 } 
+
+#popup {
+  position: fixed;
+  top: 0; /* Required when using full-screen */
+  left: 0; /* Required when using full-screen */
+  height: 35%;
+  width: 105%;
+  color: var(--primary-color);
+  z-index: 9999;
+  cursor: pointer;
+  display: none;
+  font-size: 20px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#popup a {
+  color: inherit;           /* Inherit color from #popup (i.e., var(--primary-color)) */
+  text-decoration: none;    /* Remove underline */
+}
+#popup a:hover {
+  text-decoration: underline; /* or change color on hover if needed */
+  font-style: italic;
+}
