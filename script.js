@@ -65,7 +65,12 @@ const imageGroups = {
         'Digital/Rose.webp',
         'Digital/Sunburst.webp',
         'Digital/Yerushalayim.webp',
-    ]
+    ],
+        group10: [
+        'Paintings/Leaves.webp',
+        'Paintings/leaves Mockup cropped.webp',
+        'Paintings/leaves Mockup.webp'
+        ]
 };
 
 
