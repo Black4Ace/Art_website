@@ -536,7 +536,7 @@ svg {
 } 
 
 #popup {
-  position: fixed;
+  
   top: 0; /* Required when using full-screen */
   left: 0; /* Required when using full-screen */
   height: 35%;
